@@ -48,4 +48,9 @@ public class Rover implements Turnable, Moveable {
         str = "Direction: "+direction+", x = "+x+", y = "+y+";";
         return str;
     }
+    public int[] getCoords(){
+        int[] a = new int[2];
+        a[0] = x; a[1] = y;
+        return a;
+    }
 }
