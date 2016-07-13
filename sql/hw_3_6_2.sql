@@ -1,0 +1,3 @@
+SELECT * 
+FROM contr c
+ORDER BY (BEG_DATE - END_DATE);

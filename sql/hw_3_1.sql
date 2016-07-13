@@ -1,0 +1,1 @@
+SELECT * FROM (SELECT * FROM depart WHERE min_salary = 1000 OR max_salary = 1000) WHERE name = 'ќфис';
