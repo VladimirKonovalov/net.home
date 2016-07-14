@@ -1,36 +1,24 @@
-package edu.netckracker.konovalov.hw1;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package home1;
 
 /**
  *
- * @author Vlladimir
+ * @author Администратор
  */
-
-enum CellState {FREE, OCCUPIED};
-
 public class GroundCell {
-    private CellState state;
-    private int x;
-    private int y;
-    
-    public GroundCell(){
-        state = CellState.FREE;
-        x = 0;
-        y = 0;
+    protected CellState state;
+    private int x, y = 0;
+    public GroundCell(CellState val,int x,int y)  {
+        state = val;
+        this.x=x;
+        this.y=y;
     }
     
-    public GroundCell(int _x, int _y) {
-        state = CellState.FREE;
-        x = _x;
-        y = _y;
-    }
-    
-    public CellState getState(){
-        return state;
-    }
-    public void occupyCell() {
-        state = CellState.OCCUPIED;
-    }
-    public void freeCell(){
-        state = CellState.FREE;
+    public CellState getCellState() {
+        return this.state;
     }
 }

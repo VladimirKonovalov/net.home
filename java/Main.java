@@ -1,23 +1,35 @@
-package edu.netckracker.konovalov.hw1;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package home1;
 
 /**
- * @author Vlladimir
+ *
+ * @author Администратор
  */
-public class Main {
+public class main {
 
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
-        Rover r;
-        GroundVisor visor = new GroundVisor(20,20);
-        r = new Rover(Direction.WEST, 10, 10);
-        System.out.println(r.write());
-        if (!(visor.hasObstacles(15, 15))) {
-            r.move(15, 15);
-        }
-        System.out.println(r.write());
+        
+        
+        
+        
+        // TODO code application logic here
+        Rover r = new Rover();
+        Moveable Move = new Rover();
+        Turnable Turn = new Rover();
+        
+       r.getVisor().setGround(new Ground(20,20)); 
+
+       r.executeProgramFile("command.txt");
+       
+       
+       
     }
+    
 }

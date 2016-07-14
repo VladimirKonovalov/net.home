@@ -1,39 +1,56 @@
-package edu.netckracker.konovalov.hw1;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package home1;
+
 
 /**
  *
- * @author Vlladimir
+ * @author Администратор
  */
 public class Ground {
-    private GroundCell[][] landscape;
-    private int length;
-    private int width;
-    Ground() {
-        landscape = null;
-        length = 0;
-        width = 0;
-    }
-    Ground(int _l, int _w) {
-        length = _l;
-        width = _w;
-        landscape = new GroundCell[length][width];
-        for (int i = 0; i < length; i++)
-            for(int j = 0; j < width; j++)
-                landscape[i][j] = new GroundCell(i,j);
-    }
-    public CellState getState(int _x, int _y) {
-        return landscape[_x][_y].getState();
-    }
-    public void occupyCell(int _x, int _y) {
-        landscape[_x][_y].occupyCell();
-    }
-    public void freeCell(int _x, int _y){
-        landscape[_x][_y].freeCell();
-    }
-    public int getLength() {
-        return length;
-    }
-    public int getWidth() {
-        return width;
-    }
+ private GroundCell[][] landscape;  
+ private int length, width = 0;
+  
+ public Ground(int length, int width) {
+     this.length = length;
+     this.width = width;
+      landscape = new GroundCell[length][width];
+      for(int q = 0; q<length; q++)
+      {
+          for(int w=0; w<width; w++)
+          {
+              landscape[q][w] = new GroundCell(CellState.Free,q,w);          }
+      }
+  }
+ 
+ public int getLength() {
+     return length;
+ }
+ 
+ public int getWidth() {
+     return width;
+ }
+ 
+  public void setLength(int l) {
+     this.length = l;
+ }
+ 
+ public void setWidth(int w) {
+     this.width =w;
+ }
+ 
+ public GroundCell getLandscape(int x, int y) {
+     return landscape[x][y];
+ }
+  
+ public void setLandscape(GroundCell[][] ls) {
+     landscape = ls;
+ }
+ 
+  public GroundCell[][] getLandscape() {
+     return landscape;
+ }
 }
