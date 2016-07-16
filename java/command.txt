@@ -1,2 +1,5 @@
 move 5 10 
+input a.txt
 move 7 5
+turn EAST
+
